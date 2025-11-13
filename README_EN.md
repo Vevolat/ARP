@@ -10,7 +10,7 @@ NetAttack is a network scanning and attack simulation tool designed for security
 
 - Python 3.6+
 - Windows or Linux operating system
-- Required Python libraries:
+- Required Python libraries:  
   - scapy
   - colorama (optional, for colored output)
 
