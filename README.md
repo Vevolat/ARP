@@ -1,76 +1,108 @@
-# NetAttack Tool
+# ARP欺骗攻击工具
 
-- [中文版/Chinese version](https://github.com/Vevolat/RIP-network-disconnection-attack-script/blob/main/README_zh-CN.md)
+## 项目简介
+这是一个基于Python的ARP欺骗攻击工具，支持双语界面（中文/English），可以用于网络安全测试和教育目的。
 
-**Disclaimer: This tool is for educational purposes and authorized security testing only. Unauthorized use for attacks is illegal.**
+## 功能特点
 
-## Overview
+### 核心功能
+- **ARP欺骗攻击**：支持单目标和多目标攻击模式
+- **网络扫描**：扫描网段内的在线设备
+- **带宽控制**：可设置攻击包发送频率
+- **双语界面**：支持中文和英文切换
 
-NetAttack is a network scanning and attack simulation tool designed for security professionals and students to understand network vulnerabilities. It supports multiple languages and can run on both Windows and Linux systems.
+### 交互优化
+- **网络接口选择**：自动识别物理网卡，减少虚拟/无用接口干扰
+- **网络重新扫描**：支持重复扫描网络
+- **输入验证**：完善的用户输入验证机制
+- **错误处理**：友好的错误提示和解决方案
 
-## System Requirements
+## 安装要求
 
-- Python 3.6+
-- Windows or Linux operating system
-- Required Python libraries:  
-  - scapy
-  - colorama (optional, for colored output)
+### 系统要求
+- **Windows**：需要管理员权限
+- **Linux**：需要root权限
 
-## Installation
-
-1. Clone or download this repository
-2. Install the required dependencies:
+### 依赖库
 ```bash
 pip install scapy
+pip install colorama  # Windows平台可选
 ```
 
-For enhanced output with colors (optional):
-```bash
-pip install colorama
-```
+## 使用方法
 
-## Usage
+### 运行程序
 
-Run the program with:
+#### Windows
 ```bash
+# 以管理员身份运行
 python main.py
 ```
 
-### Features
+#### Linux
+```bash
+sudo python3 main.py
+```
 
-1. **Multilingual Support**: Switch between Chinese and English interfaces
-2. **Two Attack Modes**:
-   - Network Scanning Mode: Scan and identify live hosts in your network segment
-   - Direct Attack Mode: Target a specific IP or domain
-3. **Safety Mechanisms**:
-   - Global "exit" command available at any input point
-   - Confirmation required before launching attacks
-4. **Cross-platform Compatibility**: Works on both Windows and Linux systems
+### 使用步骤
 
-### Operating Instructions
+1. **选择语言**：输入1选择中文，输入2选择English
+2. **选择网络接口**：从列表中选择要使用的网络接口
+3. **选择攻击模式**：
+   - 1：扫描网段内在线的设备，然后进行攻击
+   - 2：扫描网段内在线的设备，然后攻击所有发现的主机
+4. **设置带宽限制**：输入数字表示包/秒，留空表示无限制
+5. **网络扫描**：程序会自动扫描网段内的在线设备
+6. **选择攻击目标**：在单目标模式下选择要攻击的主机
+7. **设置攻击持续时间**：输入持续时间（秒），留空使用默认值
 
-1. Select your preferred language (Chinese/English)
-2. Choose operation mode:
-   - Mode 1: Network scanning (automatically detects network segment)
-   - Mode 2: Direct attack (enter target IP/domain)
-3. Follow on-screen instructions
+## 注意事项
 
-### Safety Notes
+1. **法律责任**：
+   - 本工具仅用于网络安全测试和教育目的
+   - 使用本工具进行未授权的网络攻击是非法的
+   - 请遵守当地法律法规
 
-- This tool is intended for educational purposes and authorized penetration testing only
-- Never use this tool against networks or systems without explicit permission
-- Always comply with applicable laws and regulations
-- The developers are not responsible for any misuse of this tool
+2. **技术风险**：
+   - ARP欺骗可能导致网络中断
+   - 建议在受控环境下使用
+   - 使用后请及时恢复网络设置
 
-## Technical Principles
+3. **权限要求**：
+   - Windows系统需要管理员权限
+   - Linux系统需要root权限
 
-The tool works by:
-1. Detecting network interfaces and determining the local network segment
-2. Performing ICMP scans to identify live hosts
-3. Simulating network stress through packet generation (educational purposes only)
+## 命令行参数
 
-## Legal Statement
+目前不支持命令行参数，所有配置通过交互式界面完成。
 
-This software is provided "as is", without warranty of any kind. The authors are not responsible for any damages or legal issues arising from the use of this tool. Users must ensure compliance with all applicable laws and regulations.
+## 文件说明
 
-By using this software, you agree to use it responsibly and legally.
+- `main.py`：主程序文件
+- `README.md`：项目说明文档
+
+## 版本历史
+
+- **v1.4**：优化双语功能，修复交互逻辑
+- **v1.3**：添加网络接口过滤功能
+- **v1.2**：支持带宽控制
+- **v1.1**：添加双语界面
+- **v1.0**：初始版本
+
+## 开发环境
+
+- **Python版本**：3.7+
+- **开发工具**：PyCharm/VS Code
+- **测试环境**：Windows 10, Ubuntu 20.04
+
+## 作者
+
+本工具仅用于教育和研究目的，请勿用于非法用途。
+
+## 许可证
+
+MIT License
+
+---
+
+**警告**：使用本工具进行未授权的网络攻击是非法的，请遵守当地法律法规。
